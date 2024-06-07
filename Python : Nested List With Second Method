@@ -1,0 +1,23 @@
+if __name__ == '__main__':
+    arr = []
+    low = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        arr.append([score, name])
+        
+    lowest_Scores = min(arr, key=lambda x:x[0])
+    arr.remove(lowest_Scores)
+    
+    second_lowest = min(arr, key=lambda x:x[0])
+    
+    second_lowest_scores = []
+    for i in arr:
+        if i[0] == second_lowest[0]:
+            second_lowest_scores.append(i[1])
+            
+    
+    second_lowest_scores.sort()
+    for i in second_lowest_scores:
+        print(i)
+    
