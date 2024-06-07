@@ -1,0 +1,27 @@
+if __name__ == '__main__':
+    arr = []
+    low = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        arr.append([score, name])
+        
+    show = min(arr)
+    for i in arr:
+        if i[0] == show[0]:
+            low.append(i)
+            
+    with_out_lowest = [[score, name] for [score, name] in arr if [score, name] not in low]
+    
+    second_Lowest = min(with_out_lowest , key=lambda x:x[0])
+    
+    second_lowest_members = []
+    for i in with_out_lowest:
+        if i[0] == second_Lowest[0]:
+            second_lowest_members.append(i[1])
+            
+            second_lowest_members.sort()
+
+    # Print the second lowest members in separate lines
+    for member in second_lowest_members:
+        print(member)    
