@@ -1,0 +1,34 @@
+if __name__ == '__main__':
+    N = int(input())
+    array = []
+    listing = []
+    for i in range(N):
+        array.append(input().split())
+        
+    for commands in array:
+        if commands[0] == "insert":
+            index = int(commands[1])
+            value = int(commands[2])
+            listing.insert(index, value)
+            
+        elif commands[0] == "print":
+            print(listing)
+        
+        elif commands[0] == "remove":
+            value = int(commands[1])
+            listing.remove(value)
+            
+        elif commands[0] == "append":
+            value = int(commands[1])
+            listing.append(value)
+            
+        elif commands[0] == "sort":
+            listing.sort()
+            
+        elif commands[0] == "pop":
+            listing.pop()
+        
+        elif commands[0] == "reverse":
+            listing.reverse()
+            
+            
