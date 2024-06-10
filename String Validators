@@ -1,0 +1,43 @@
+if __name__ == '__main__':
+    s = input()
+    
+    count1 = count2 = count3 = count4 = count5 = 0
+    
+    for i in range(0, len(s)):
+        if s[i].isalnum():
+            count1 = count1 + 1
+        if s[i].isalpha():
+            count2 = count2 + 1
+        if s[i].isdigit():
+            count3 = count3 + 1
+        if s[i].islower():
+            count4 = count4 + 1
+        if s[i].isupper():
+            count5 = count5 + 1
+    
+    if count1 >=1:
+        print("True")
+    else:
+        print("False")
+        
+    if count2 >= 1:
+        print("True")
+    else:
+        print("False")
+    if count3 >= 1:
+        print("True")
+    else:
+        print("False")
+        
+    if count4 >= 1:
+        print("True")
+    else:
+        print("False")
+        
+    if count5 >= 1:
+        print("True")
+    else:
+        print("False")
+    
+    
+    
