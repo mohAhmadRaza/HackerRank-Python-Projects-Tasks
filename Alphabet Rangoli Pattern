@@ -1,0 +1,33 @@
+
+def print_rangoli(size):
+    listing = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+               'v', 'w', 'x', 'y', 'z']
+    
+    if size == 26:  # Special case when size equals 26
+        size2 = 25
+    else:
+        size2 = int(size-26)-1
+        
+    string = listing[(size2)]
+    looping = int(size - 1) * 2
+    looping2=int(size - 1) * 2
+    if(size > 1):
+       for i in range(1, size+1):
+           print('-' * looping + string + '-' * looping)
+           looping = looping-2
+           if i != 25:
+              string = '-'.join(listing[size2:(size2-i)-1:-1])+'-'+('-'.join(listing[(size2-i+1):size2+1:+1]))
+           if i == 25:
+               string = '-'.join(listing[-1:-27:-1]) + '-' + ('-'.join(listing[1:26]))
+       looping =2
+       for i in range(size-1, 1, -1):
+           string = '-'.join(listing[size-1:size-i:-1])+'-'+('-'.join(listing[size-i:size2+1:+1]))
+           print('-' * looping + string + '-' * looping)
+           looping = looping + 2
+       print('-' * looping2 + listing[size2] + '-' * looping2)
+    else:
+        print("a")
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
