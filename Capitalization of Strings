@@ -1,0 +1,64 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+Method 1:
+def solve(s):
+    string = ""
+    string = s[0].upper()
+    for i in range(1, len(s)):
+        if s[i-1] == ' ':
+            string += s[i].upper()
+        else:
+            string += s[i]
+    return string
+        
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+Method 2:
+def solve(s):
+    string = s.title()
+    return string
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close(
+
+Method 3:
+def solve(s):
+    string = s.split()
+    capitalized_words = [st.capitalize() for st in string]
+    cpitalize_string = ' '.join(capitalize_words)
+    return capitalize_string
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close(
