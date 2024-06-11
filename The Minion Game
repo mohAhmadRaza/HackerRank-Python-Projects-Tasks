@@ -1,0 +1,68 @@
+def minion_game(string):
+    vowels = "AEIOU"
+    length = len(string)
+    
+    stuart_score = 0
+    kevin_score = 0
+    
+    for i in range(length):
+        if string[i] in vowels:
+            kevin_score += length - i
+        else:
+            stuart_score += length - i
+    
+    if stuart_score > kevin_score:
+        print("Stuart", stuart_score)
+    elif kevin_score > stuart_score:
+        print("Kevin", kevin_score)
+    else:
+        print("Draw")
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+
+Method #2. 
+def minion_game(string):
+    staurt = []
+    vowels = "AEIOU"
+
+    for i in range(0, len(string)):
+        if string[i] not in vowels:
+            staurt.append(string[i])
+            forming_string = string[i]
+            for j in range(i+1, len(string)):
+                forming_string += string[j]
+                staurt.append(forming_string)
+
+    # unique_substrings = []
+    # for i in staurt:
+    #     if i not in unique_substrings:
+    #         unique_substrings.append(i)
+
+    kevin = []
+    for i in range(0, len(string)):
+        if string[i] in vowels:
+            kevin.append(string[i])
+            forming_string = string[i]
+            for j in range(i + 1, len(string)):
+                forming_string += string[j]
+                kevin.append(forming_string)
+
+    # unique_substrings1 = []
+    # for i in kevin:
+    #     if i not in unique_substrings1:
+    #         unique_substrings1.append(i)
+
+    if len(staurt) > len(kevin):
+        print("Stuart", len(staurt))
+    elif len(staurt) < len(kevin):
+        print("Kevin", len(kevin))
+    elif len(staurt) == len(kevin):
+        print("Draw")
+    
+ 
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
