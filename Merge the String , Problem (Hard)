@@ -1,0 +1,20 @@
+def merge_the_tools(string, k):
+    increment = int(k)
+    length = int(len(string) / k)
+    n = int(0)
+    for i in range(length):
+        current_string = string[n:k]
+        new_string = ""
+        for j in current_string:
+            if j not in new_string:
+                new_string += j
+        print(new_string)
+        n = k
+        k += increment
+        
+    
+    
+    
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
