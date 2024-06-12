@@ -1,0 +1,13 @@
+from itertools import permutations
+
+string, integer = input().split()
+
+permutation = list(permutations(string, int(integer)))
+
+permutation.sort()
+
+string =""
+
+for i in permutation:
+    string = ''.join(i)
+    print(string)
