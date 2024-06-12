@@ -1,0 +1,14 @@
+from itertools import product
+list1 = list(map(int, input().split()))
+list2 = list(map(int, input().split()))
+
+list1_list2 = list((product(list1, list2)))
+list1_list2.sort()
+
+string = ""
+
+for i in list1_list2:
+    string += str(i)
+    string += " "
+
+print(string)
