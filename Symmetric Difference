@@ -1,0 +1,15 @@
+
+n = input()
+listing = list(map(int, input().split()))
+set1 = set(listing)
+m = input()
+listing = list(map(int, input().split()))
+set2 = set(listing)
+
+listing = []
+listing.extend(set1.difference(set2))
+listing.extend(set2.difference(set1))
+
+listing.sort()
+for i in listing:
+    print(i)
