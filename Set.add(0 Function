@@ -1,0 +1,7 @@
+n = input()
+set1 = set()
+for i in range(int(n)):
+    string = input() 
+    set1.add(string)
+    
+print(len(set1))
