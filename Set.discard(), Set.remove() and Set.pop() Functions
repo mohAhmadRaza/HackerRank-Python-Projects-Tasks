@@ -1,0 +1,18 @@
+n = int(input())
+s = set(map(int, input().split()))
+m = int(input())
+for i in range(m):
+    inputs = input().split()
+    command = inputs[0]
+    if command == "pop":
+        s.pop()
+    if command == "remove":
+        value = inputs[1]
+        s.remove(int(value))
+    if command == "discard":
+        value = inputs[1]
+        s.discard(int(value))
+
+
+listing = list(s)
+print(sum(listing))
