@@ -1,0 +1,15 @@
+from collections import Counter
+
+shoes = int(input())
+shoes_list = list(map(int, input().split()))
+number_of_customers = int(input())
+total_price = 0
+
+val = Counter(shoes_list)
+for i in range(number_of_customers):
+    size, price = map(int, input().split())
+    if val[size] >0:
+        total_price += price
+        val[size] = val[size] - 1
+
+print(total_price)
